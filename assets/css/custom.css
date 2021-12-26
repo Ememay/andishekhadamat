@@ -1,0 +1,163 @@
+/*global style*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    direction: rtl;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: shabnam;
+    src: url(../font/Shabnam.ttf);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+button,
+ol,
+li,
+ul,
+input,
+label,
+th,
+td,
+tr,
+option,
+select {
+    font-family: shabnam !important;
+}
+
+td {
+    font-size: 15px;
+    max-width: 190px !important;
+    overflow-y: hidden;
+    width: 100px;
+}
+
+.table>tbody {
+    vertical-align: middle !important;
+}
+
+
+/*menu*/
+
+.menu li,
+a {
+    color: white !important;
+}
+
+ul#submenu1 li,
+ul#submenu2 li,
+ul#submenu3 li {
+    margin-right: 20px;
+}
+
+
+/*setting*/
+
+.input-h-80 {
+    height: 80px !important;
+}
+
+
+/*table list*/
+
+.custom-table * {
+    color: #777 !important;
+}
+
+.custom-table td {
+    font-size: 14px !important;
+}
+
+.custom-table tr {
+    height: 90px;
+}
+
+td:nth-child(1) {
+    width: 54px !important;
+}
+
+td.status {
+    width: 65px !important;
+}
+
+td.time {
+    width: 70px;
+}
+
+td.operation {
+    width: 70px;
+}
+
+
+/*refresh button*/
+
+button.refresh-button {
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    margin-right: 60px !important;
+}
+
+
+/*mini menu*/
+
+.mini-menu-button {
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    position: absolute;
+    left: -5px;
+    top: 14px;
+    z-index: 999 !important;
+}
+
+.menu {
+    transition: 0.7s right;
+}
+
+.minimal {
+    transform: translateX(275px) !important;
+}
+
+
+/*performerc-statistics*/
+
+td.performerc-statistics {
+    padding-right: 24px !important;
+    font-size: 17px !important;
+}
+
+/*sign for call which has problem*/
+
+td.problem span {
+    background: red;
+    color: white !important;
+    padding: 5px;
+    border-radius: 2px;
+    margin-right: -5px;
+}
+
+/*show password toggle in setting*/
+
+.show-pass-toggle {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
