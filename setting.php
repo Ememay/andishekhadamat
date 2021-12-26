@@ -114,9 +114,9 @@ if (isset($_POST['submit'])) {
     <?php include 'menu.php'; ?>
 
     <!--login page--->
-    <main class="form-signin col-10 my-5 d-flex justify-content-center">
+    <main class="form-signin col-12 col-md-10 my-5 d-flex justify-content-center">
         <form method="POST" class="w-50" enctype="multipart/form-data">
-            <h1 class="h3 mb-4 fw-normal">هیچ وقت شخصیتی که قبلا بودی رو فراموش نکن!</h1>
+            <h1 class="h3 lead mb-4 fw-normal">هیچ وقت شخصیتی که قبلا بودی رو فراموش نکن!</h1>
             <div class="form-floating my-3">
                 <input required type="text" class="form-control input-h-80" placeholder="name@example.com" name="name" value="<?php echo $admininfo['name']; ?>">
                 <label for="floatingInput">نام شما</label>
@@ -134,7 +134,7 @@ if (isset($_POST['submit'])) {
                 <input type="file" class="form-control input-h-80" id="fileToUpload" placeholder="Password" name="fileToUpload" value="<?php echo $admininfo['image']; ?>" >
                 <label for="floatingPassword"> تصویر پروفایل شما</label>
             </div>
-            <button class="w-50 btn btn-lg btn-primary d-inline" type="submit" name="submit">ذخیره تنظیمات</button><a href="dashboard.php" class="w-25 btn btn-lg btn-warning d-inline mx-1" type="submit" name="submit">بازگشت</a>
+            <button class="w-100 btn btn-lg btn-primary d-block d-md-inline" type="submit" name="submit">ذخیره تنظیمات</button><a href="dashboard.php" class="w-100 btn btn-lg btn-warning d-block d-md-inline  my-1" type="submit" name="submit">بازگشت</a>
         </form>
     </main>
  </div>

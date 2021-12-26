@@ -77,13 +77,17 @@ $waiting = 0;
             <?php include 'menu.php'; ?>
 
 
-            <div class="whole-overview-container d-flex flex-column p-2 col-10">
+            <div class="whole-overview-container d-flex flex-column p-2 col-12 col-md-10">
 
 
-                <div class="content my-5">
-                    <a class="btn btn-dark pe-none">آخرین تماس ها</a>
-                    <a href="<?php echo constant("SITE_URL"); ?>/calls/all.php" class="btn btn-primary">مشاهده همه تماس ها</a>
-                    <a href="<?php echo constant("SITE_URL"); ?>/calls/add.php" class="btn btn-warning">افزودن تماس جدید</a>
+                <div class="content mb-5">
+
+                    <div class="dashboard-button-container">
+                        <a class="btn btn-dark pe-none my-1">آخرین تماس ها</a>
+                        <a href="<?php echo constant("SITE_URL"); ?>/calls/all.php" class="btn btn-primary my-1">مشاهده همه تماس ها</a>
+                        <a href="<?php echo constant("SITE_URL"); ?>/calls/add.php" class="btn btn-warning my-1">افزودن تماس جدید</a>
+                    </div>
+
 
                     <div class="container_fluid p-1">
                         <div class="table-responsive">
@@ -115,19 +119,18 @@ $waiting = 0;
                                             <td <?php if ($call['problem'] == 'yes') {
                                                     echo 'class="problem"';
                                                 } ?>><?php echo $callNumber++ ?> </td>
-                                            <td> <?php echo $call['name']; ?> </td>
-                                            <td>
-                                              <?php  echo $call['service']; ?>
-
+                                            <td class="name"> <?php echo $call['name']; ?> </td>
+                                            <td class="service">
+                                                <?php echo $call['service']; ?>
                                             </td>
-                                            <td><?php echo $call['number']; ?></td>
-                                            <td><?php echo $call['address']; ?></td>
-                                            <td> <?php foreach ($recent_services as $res) {
+                                            <td class="number"><?php echo $call['number']; ?></td>
+                                            <td class="address"><?php echo $call['address']; ?></td>
+                                            <td class="res"> <?php foreach ($recent_services as $res) {
                                                         if ($res['id'] == $call['res']) {
                                                             echo $res['name'];
                                                         }
                                                     } ?> </td>
-                                            <td><?php echo $call['description']; ?></td>
+                                            <td class="description"><?php echo $call['description']; ?></td>
                                             <td class="time"><?php echo jdate('Y M d', $call['date']); ?> </td>
                                             <?php if ($call['status'] == 0) { ?> <td class="status"><button class="btn btn-secondary btn-sm"> <img src="assets/icons/hourglass.svg" alt=""> </button> </td> <?php  } elseif ($call['status'] == 1) { ?> <td class="status"><button class="btn btn-danger btn-sm"> <img src="assets/icons/x-lg.svg" alt=""> </button> </td> <?php      } elseif ($call['status'] == 2) {  ?> <td class="status"><button class="btn btn-success btn-sm"> <img src="assets/icons/check-square-fill.svg" alt=""></button> </td> <?php } ?>
                                             <td class="operation"> <a href="<?php echo constant("SITE_URL"); ?>/calls/bypass.php?id=<?php echo $call['id']; ?>" class="btn btn-danger btn-sm call-delete-button" data-name="<?php echo $call['name']; ?>" onclick="event.preventDefault()"> <img src="assets/icons/trash.svg" alt="" class="pe-none"> </a> <a href="<?php echo constant("SITE_URL"); ?>/calls/edit.php?id=<?php echo $call['id']; ?>" class="btn btn-warning btn-sm"> <img src="assets/icons/pencil-square.svg" alt=""> </a></td>
@@ -149,9 +152,13 @@ $waiting = 0;
                 </div>
 
                 <div class="content my-5">
-                    <a class="btn btn-dark pe-none">آخرین انجام دهندگان</a>
-                    <a href="<?php echo constant("SITE_URL"); ?>/performers/all.php" class="btn btn-primary">مشاهده همه انجام دهندگان</a>
-                    <a href="<?php echo constant("SITE_URL"); ?>/performers/add.php" class="btn btn-warning">افزودن انجام دهنده جدید</a>
+
+                    <div class="dashboard-button-container">
+                        <a class="btn btn-dark pe-none my-1">آخرین انجام دهندگان</a>
+                        <a href="<?php echo constant("SITE_URL"); ?>/performers/all.php" class="btn btn-primary my-1">مشاهده همه انجام دهندگان</a>
+                        <a href="<?php echo constant("SITE_URL"); ?>/performers/add.php" class="btn btn-warning my-1">افزودن انجام دهنده جدید</a>
+                    </div>
+
 
                     <div class="container_fluid p-2">
 
@@ -180,10 +187,10 @@ $waiting = 0;
 
                                         <tr>
                                             <td><?php echo $performersNumber++ ?> </td>
-                                            <td> <?php echo $service['name']; ?> </td>
-                                            <td><?php echo $service['service']; ?></td>
-                                            <td><?php echo $service['number']; ?></td>
-                                            <td><?php echo $service['address']; ?></td>
+                                            <td class="name"> <?php echo $service['name']; ?> </td>
+                                            <td class="service"><?php echo $service['service']; ?></td>
+                                            <td class="number"><?php echo $service['number']; ?></td>
+                                            <td class="address" ><?php echo $service['address']; ?></td>
                                             <td class="performerc-statistics">
 
                                                 <?php
@@ -222,8 +229,8 @@ $waiting = 0;
                                                 $canceled = 0;
 
                                                 ?>
-                                            <td><?php echo $service['description']; ?></td>
-                                            <td> <a href="<?php echo constant("SITE_URL"); ?>/performers/delete.php?id=<?php echo $service['id']; ?>" class="btn btn-danger btn-sm perfomer-delete-button" data-name="<?php echo $service['name']; ?>" onclick="event.preventDefault()"> <img src="assets/icons/trash.svg" alt="" class="pe-none"> </a> <a href="<?php echo constant("SITE_URL"); ?>/performers/edit.php?id=<?php echo $service['id']; ?>" class="btn btn-warning btn-sm"><img src="assets/icons/pencil-square.svg" alt=""> </a></td>
+                                            <td class="description"><?php echo $service['description']; ?></td>
+                                            <td class="operation"> <a href="<?php echo constant("SITE_URL"); ?>/performers/delete.php?id=<?php echo $service['id']; ?>" class="btn btn-danger btn-sm perfomer-delete-button" data-name="<?php echo $service['name']; ?>" onclick="event.preventDefault()"> <img src="assets/icons/trash.svg" alt="" class="pe-none"> </a> <a href="<?php echo constant("SITE_URL"); ?>/performers/edit.php?id=<?php echo $service['id']; ?>" class="btn btn-warning btn-sm"><img src="assets/icons/pencil-square.svg" alt=""> </a></td>
 
 
                                         <?php }

@@ -102,6 +102,17 @@ td.operation {
     width: 70px;
 }
 
+td {
+    font-size: 15px;
+    max-width: 320px !important;
+    max-width: 200px;
+    overflow-y: hidden;
+}
+
+.table>tbody {
+    vertical-align: middle !important;
+}
+
 
 /*refresh button*/
 
@@ -143,6 +154,7 @@ td.performerc-statistics {
     font-size: 17px !important;
 }
 
+
 /*sign for call which has problem*/
 
 td.problem span {
@@ -153,6 +165,7 @@ td.problem span {
     margin-right: -5px;
 }
 
+
 /*show password toggle in setting*/
 
 .show-pass-toggle {
@@ -160,4 +173,47 @@ td.problem span {
     left: 25px;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+
+/* responsive on mobile (768px) */
+
+@media screen and (max-width:768px) {
+    .dashboard-button-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .dashboard-button-container a {
+        width: 100%;
+    }
+    td.name {
+        min-width: 120px !important;
+    }
+    td.address {
+        min-width: 200px;
+    }
+    td.service {
+        min-width: 120px !important;
+    }
+    td.res {
+        min-width: 120px;
+    }
+    td.description {
+        min-width: 160px;
+    }
+    td.time {
+        min-width: 120px;
+    }
+    td.operation {
+        min-width: 100px;
+    }
+    td.performerc-statistics {
+        min-width: 140px;
+    }
+    .form-signin form {
+        width: 100% !important;
+    }
+    .service-checkbox-container .add-performers-checkbox {
+        width: 100% !important;
+    }
 }

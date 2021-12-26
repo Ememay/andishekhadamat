@@ -44,20 +44,6 @@ if (isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ویرایش انجام دهنده</title>
-    
-    <style>
-        td {
-            font-size: 15px;
-            max-width: 320px !important;
-            max-width: 200px;
-            overflow-y: hidden;
-
-        }
-
-        .table>tbody {
-            vertical-align: middle !important;
-        }
-    </style>
            <?php include '../scripts/header.php'; ?>
 </head>
 
@@ -71,7 +57,7 @@ if (isset($_POST['submit'])) {
 
 
     <!---main--->
-    <div class="col-10 my-3">
+    <div class="col-12 col-md-10 my-3">
         <div class="container">
             <form method="POST">
                 <div class="my-3">

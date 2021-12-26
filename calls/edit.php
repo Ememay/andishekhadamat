@@ -88,19 +88,6 @@ $recent_performers = $recent_performers_result->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ویرایش تماس</title>
     <?php include '../scripts/header.php'; ?>
-    <style>
-        td {
-            font-size: 15px;
-            max-width: 320px !important;
-            max-width: 200px;
-            overflow-y: hidden;
-
-        }
-
-        .table>tbody {
-            vertical-align: middle !important;
-        }
-    </style>
 </head>
 
 <body>
@@ -113,7 +100,7 @@ $recent_performers = $recent_performers_result->fetchAll(PDO::FETCH_ASSOC);
             <?php include '../menu.php'; ?>
 
             <!---main--->
-            <div class="col-10 my-3">
+            <div class="col-12 col-md-10 my-3">
                 <div class="container">
                     <form method="POST">
                         <div class="my-3">

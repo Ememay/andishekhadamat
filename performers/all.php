@@ -62,7 +62,7 @@ $waiting = 0;
 
 
 
-    <div class="content col-10 whole-overview-container">
+    <div class="content col-12 col-md-10 whole-overview-container">
         <div class="container_fluid p-1">
             <div class="table-responsive">
                 <table class="table custom-table">
@@ -89,10 +89,10 @@ $waiting = 0;
 
                             <tr>
                                 <td><?php echo $number++ ?> </td>
-                                <td> <?php echo $service['name']; ?> </td>
-                                <td><?php echo $service['service']; ?></td>
-                                <td><?php echo $service['number']; ?></td>
-                                <td><?php echo $service['address']; ?></td>
+                                <td class="name"> <?php echo $service['name']; ?> </td>
+                                <td class="service"><?php echo $service['service']; ?></td>
+                                <td class="number"><?php echo $service['number']; ?></td>
+                                <td class="address"><?php echo $service['address']; ?></td>
                               <td class="performerc-statistics">
 
                                             <?php
@@ -133,8 +133,8 @@ $waiting = 0;
                                             ?>
 
                                         </td>
-                                                            <td><?php echo $service['description']; ?></td>
-                                <td> <a href="<?php echo constant("SITE_URL"); ?>/performers/delete.php?id=<?php echo $service['id']; ?>" class="btn btn-danger btn-sm performer-delete-button" data-name="<?php echo $service['name']; ?>" onclick="event.preventDefault()"> <img src="../assets/icons/trash.svg" alt="" class="pe-none">  </a> <a href="<?php echo constant("SITE_URL"); ?>/performers/edit.php?id=<?php echo $service['id']; ?>" class="btn btn-warning btn-sm"><img src="../assets/icons/pencil-square.svg" alt=""> </a></td>
+                                                            <td class="description"><?php echo $service['description']; ?></td>
+                                <td class="operation"> <a href="<?php echo constant("SITE_URL"); ?>/performers/delete.php?id=<?php echo $service['id']; ?>" class="btn btn-danger btn-sm performer-delete-button" data-name="<?php echo $service['name']; ?>" onclick="event.preventDefault()"> <img src="../assets/icons/trash.svg" alt="" class="pe-none">  </a> <a href="<?php echo constant("SITE_URL"); ?>/performers/edit.php?id=<?php echo $service['id']; ?>" class="btn btn-warning btn-sm"><img src="../assets/icons/pencil-square.svg" alt=""> </a></td>
                             </tr>
 
 

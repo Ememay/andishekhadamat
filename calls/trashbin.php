@@ -41,7 +41,7 @@ $recent_services = $recent_services_result->fetchAll(PDO::FETCH_ASSOC);
     <?php include '../menu.php'; ?>
 
 
-    <div class="content col-10 whole-overview-container">
+    <div class="content col-12 col-md-10 whole-overview-container">
         <div class="container_fluid p-1">
             <div class="table-responsive">
                 <table class="table custom-table">
@@ -71,20 +71,20 @@ $recent_services = $recent_services_result->fetchAll(PDO::FETCH_ASSOC);
 
                             <tr>
                                 <td <?php if($call['problem'] == 'yes'){echo 'class="problem"';} ?>> <span><?php echo $number++ ?></span> </td>
-                                <td> <?php echo $call['name']; ?> </td>
-                                <td> <?php foreach ($recent_services as $res) {
+                                <td class="name"> <?php echo $call['name']; ?> </td>
+                                <td class="service"> <?php foreach ($recent_services as $res) {
                                             if ($res['service'] == $call['service']) {
                                                 echo $res['service'];
                                             }
                                         } ?> </td>
-                                <td><?php echo $call['number']; ?></td>
-                                <td><?php echo $call['address']; ?></td>
-                                <td> <?php foreach ($recent_services as $res) {
+                                <td class="number"><?php echo $call['number']; ?></td>
+                                <td class="address"><?php echo $call['address']; ?></td>
+                                <td class="res"> <?php foreach ($recent_services as $res) {
                                             if ($res['id'] == $call['res']) {
                                                 echo $res['name'];
                                             }
                                         } ?> </td>
-                                <td><?php echo $call['description']; ?></td>
+                                <td class="description"><?php echo $call['description']; ?></td>
                                 <td class="time"><?php echo jdate('Y M d', $call['date']); ?> </td>
                                <?php if ($call['status'] == 0) { ?> <td class="status"><button class="btn btn-secondary btn-sm">  <img src="../assets/icons/hourglass.svg" alt=""> </button> </td> <?php  } elseif ($call['status'] == 1) { ?> <td class="status"><button class="btn btn-danger btn-sm">  <img src="../assets/icons/x-lg.svg" alt=""> </button> </td> <?php      } elseif ($call['status'] == 2) {  ?> <td class="status"><button class="btn btn-success btn-sm"> <img src="../assets/icons/check-square-fill.svg" alt=""></button> </td> <?php } ?>
                                             <td class="operation"> <a href="<?php echo constant("SITE_URL"); ?>/calls/delete.php?id=<?php echo $call['id']; ?>" class="btn btn-danger btn-sm call-delete-button" data-name="<?php echo $call['name']; ?>" onclick="event.preventDefault()">  <img src="../assets/icons/trash.svg" alt=""  class="pe-none"> </a> <a href="<?php echo constant("SITE_URL"); ?>/calls/restore.php?id=<?php echo $call['id']; ?>"  data-name="<?php echo $call['name']; ?>" onclick="event.preventDefault()" class="btn btn-warning btn-sm recycle-button">  <img src="../assets/icons/recycle.svg" alt="" class="pe-none"> </a></td>
