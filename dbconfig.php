@@ -102,5 +102,5 @@ if ($_SESSION['login'] == true) {
     // $url= $_SERVER['REQUEST_URI'];    
     // echo $url;
     // exit();
-    header('location:http://andishekhadamat.ir/');
+    header("location:$SITE_url/");
 }
