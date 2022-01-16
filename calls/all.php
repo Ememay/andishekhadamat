@@ -134,21 +134,29 @@ $recent_services = $recent_services_result->fetchAll(PDO::FETCH_ASSOC);
                         </table>
                         <nav aria-label="Page navigation example">
                             <ul class="pagination d-flex justify-content-center">
+
+                                <li class="page-item "><a class="page-link text-dark" href="all.php?page=1">
+                                        << </a> </li>
                                 <?php
 
                                 //display the link of the pages in URL  
 
-                                for ($page = 1; $page <= $number_of_page; $page++) {
+                                for ($page = 1; $page <= 5; $page++) {
 
                                 ?>
 
                                     <li class="page-item "><a class="page-link text-dark" href="all.php?page=<?php echo $page; ?>"><?php echo $page; ?></a></li>
 
+
                                 <?php
+
 
                                 }
 
                                 ?>
+
+<li class="page-item "><a class="page-link text-dark" href="all.php?page=<?php echo $number_of_page; ?>">>></a></li>
+
 
                             </ul>
                         </nav>
